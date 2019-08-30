@@ -1,0 +1,100 @@
+<!-- INSURANCE COMPONENT -->
+<section class="details" style="height: 100%">
+  <div class="row">
+    <div class="col-lg-9 col-sm-12 mb-5">
+      <div class="detail-header">
+        <h4 mb-5>Tell Us About yourself</h4>
+        <p>Thanks for choosing us! In order to start an account, please tell us
+          about yourself.</p>
+      </div>
+      <div class="forms-header">
+        <h4>Personal Information</h4>
+        <!--REACTIVE FORM STARTS-->
+        <form [formGroup]="personForm" (ngSubmit)="onSubmit()">
+          <div formGroupName="username" class="row my-3">
+            <div class="form-group col-sm-12 col-md-2">
+
+              <select class="form-control" formControlName="title" required>
+                <option value="">Title* </option>
+                <option *ngFor="let item of titleMenuItems" [ngValue]="item">{{item}}</option>
+              </select>
+
+              <div class="invalid-feedback d-block"
+                *ngIf="!personForm.get('username.title').valid && personForm.get('username.title').touched">
+                !Please select title</div>
+            </div>
+            <div class="form-group  col-sm-12 col-md-3">
+              <input class="form-control" type="text" formControlName="firstname" placeholder="First name*" required>
+
+              <div class="invalid-feedback d-block"
+                *ngIf="!personForm.get('username.firstname').valid && personForm.get('username.firstname').touched">
+                !Please enter first name
+              </div>
+            </div>
+            <div class="form-group col-sm-12 col-md-3">
+              <input class="form-control" type="text" formControlName="middleinitial" placeholder="Middle Initial">
+            </div>
+            <div class="form-group col-sm-12 col-md-4">
+              <input class="form-control" type="text" formControlName="lastname" placeholder="Last Name*" required>
+
+              <div class="invalid-feedback d-block"
+                *ngIf="!personForm.get('username.lastname').valid && personForm.get('username.lastname').touched">
+                !Please enter last name
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-sm-10 col-md-5 row helper">
+              <input type="email" class="form-control short-control col-sm-8 col-md-10" formControlName="email"
+                placeholder="Email Address*" required>
+              <span class="helper-icon" #rr data-toggle="tooltip" data-placement="bottom" title="A valid email format is job.abraham@gmail.com"><i
+                  class="far fa-question-circle"></i></span>
+              <div class="invalid-feedback d-block"
+                *ngIf="!personForm.get('email').valid && personForm.get('email').touched">
+                !Please enter email address
+              </div>
+            </div>
+            <div class="form-group col-sm-12 col-md-3">
+              <input type="text" class="form-control" formControlName="dob" placeholder="Date Of Birth*" required>
+
+              <div class="invalid-feedback d-block"
+                *ngIf="!personForm.get('dob').valid && personForm.get('dob').touched">
+                !Please enter date of birth
+              </div>
+            </div>
+            <div class="form-group col-sm-12 col-md-4 row helper">
+              <input type="number" max="9" class="form-control short-control col-sm-8 col-md-10" formControlName="sin"
+                placeholder="Social Insurance Number*" required>
+                <span class="helper-icon" data-toggle="tooltip" data-placement="bottom" title="Please enter a 9 digit number"><i class="far fa-question-circle"></i></span>
+
+              <div class="invalid-feedback d-block"
+                *ngIf="!personForm.get('sin').valid && personForm.get('sin').touched">
+                !Please enter social insurance number
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-3 float-right button-wrapper">
+
+            <button aria-label="Submit" class="btn btn-success float-right">Submit</button>
+            <button aria-label="Cancel" class="btn btn-danger mr-3 float-right">Cancel</button>
+          </div>
+        </form>
+        <!--REACTIVE FORM ENDS-->
+      </div>
+
+    </div>
+    <div class="col-lg-3 col-md-12 col-sm-10 mt-4 right-container">
+      <div class="right-section">
+        <span class="mt-4">You are applying for:</span>
+        <p class="col-md-8 col-sm-12 p-0 mt-4">Medical Insurance</p>
+      </div>
+      <button aria-label="See More Coverage Options" class="btn btn-success mt-3 mb-3 coverage-button">See More Coverage Options</button>
+    </div>
+  </div>
+</section>
+
+
+
+

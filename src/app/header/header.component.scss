@@ -1,0 +1,93 @@
+@import '../../variables';
+
+
+.navbar-toggler {
+  border: 0 !important;
+  color: $white;
+  border-color: transparent!important;
+}
+.navbar {
+  padding: 0 1rem;
+
+  .navbar-dark .navbar-toggler {
+    border: 0 !important;
+    color: $white;
+    border-color: transparent!important;
+  }
+
+  .left-nav .nav-item {
+    margin: 0 10px;
+    border-bottom: 4px solid transparent;
+
+    &:hover {
+      border-bottom: 4px solid $general-warning;
+    }
+  }
+
+  .nav-link {
+    color: $white;
+  }
+
+  img {
+    width: 40px;
+  }
+
+
+}
+
+.slidein-menu {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  left: 0;
+  top: 0;
+  background: #fff;
+  height: 100%;
+  width: 40%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  z-index: 1000;
+  transition: 2s;
+
+  .sidebar-header {
+    background-color: $blue;
+    height: 70px;
+
+    img {
+      height: 50px;
+      width: 50px;
+    }
+  }
+
+  .fa-times {
+    color: $white;
+
+  }
+
+  .menu-items {
+
+    list-style: none;
+
+    li {
+      margin: 2rem;
+      font-size: 1.5rem;
+      color: $footer-color;
+    }
+  }
+}
+
+
+// MEDIA QUERIES FOR SMALL DEVICES
+@media (min-width: $small-screen-min) and (max-width: $med-screen-max) {
+  .navbar {
+    justify-content: flex-start !important;
+  }
+
+  .navbar-brand {
+    margin: 0 1rem !important;
+  }
+
+  .slidein-menu {
+    width: 80% !important;
+  }
+}

@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-lg navbar-dark col-dark">
+  <button aria-label="Menu" class="navbar-toggler" (click)="showMenu()" type="button" data-toggle="collapse"
+    data-target="#collapsibleNavbar">
+    <i class="fas fa-bars"></i>
+  </button>
+
+
+  <a class="navbar-brand text-col ml-5">Application</a>
+
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav left-nav  mr-auto">
+      <li class="nav-item">
+        <a class="nav-link text-col">Products</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-col" >Commercials</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-col" >Contact Us</a>
+      </li>
+
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item dropdown"><a class="nav-link"> Ontario
+          
+          
+        </a>
+      </li>
+
+
+      <li class="nav-item"><a class="nav-link" > EN  </a></li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/search">
+          <i class="fas fa-search"></i>
+        </a>
+      </li>
+      <li class="nav-item"><a class="nav-link">
+          <i class="fas fa-lock"></i> Login
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<div *ngIf="showMenuBar" class="slidein-menu">
+  <div class="sidebar-header pt-2">
+   <label class="ml-5 mt-2">Application</label>
+   
+    <span class="float-right mr-2" (click)="showMenu()"> <i class="fas fa-times fa-2x"></i></span>
+  </div>
+  <div class="md-form mb-3 mt-0">
+    <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+  </div>
+  <ul class="menu-items">
+    <li *ngFor="let item of sideMenuItems">{{item}}</li>
+  </ul>
+</div>
+

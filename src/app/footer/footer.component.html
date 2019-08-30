@@ -1,0 +1,29 @@
+
+
+<footer class="footer-body">
+  
+  <div class="footer-content">
+    <div class="pt-5 pb-3 col-sm-12 col-md-12 footer-heading">
+      <p>Need to talk to us directly ?
+        <a class="blue-text">Contact us ></a>
+      </p>
+    </div>
+
+    <div class="footer-menu flex-column">
+      <ul class="m-3">
+        <li class="footer-menu-items" *ngFor="let item of footerMenuItems">{{item}}</li>
+      </ul>
+    </div>
+<!--SOCIAL MEDIA ICONS-->
+    <div class="social-media-icons mt-4">
+        <ul>
+            <li class="icon-wrapper" *ngFor="let item of footerMenuIcons">
+                <a href="{{item.href}}">
+                    <i class="{{item.type}} fa-{{item.value}}"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+  </div>
+</footer>
